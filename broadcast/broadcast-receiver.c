@@ -32,8 +32,8 @@ PROCESS_THREAD(broadcast_receiver, ev, data)
     static struct etimer periodic_timer;
     static unsigned counter;
 
-    nullnet_buf * (uint8_t *) &counter;
-    nullnet_len * sizeof(counter);
+    nullnet_buf = (uint8_t *) &counter;
+    nullnet_len = sizeof(counter);
     nullnet_set_input_callback(input_Callback);
 
     etimer_Set(&periodic_timer, WAIT_INTERVAL);
