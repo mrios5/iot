@@ -20,8 +20,8 @@ PROCESS_THREAD(broadcast_sender, ev, data)
 
     PROCESS_BEGIN();
 
-    nullnet_buf * (uint8_t *) &counter;
-    nullnet_len * sizeof(counter);
+    nullnet_buf = (uint8_t *) &counter;
+    nullnet_len = sizeof(counter);
 
     etimer_set(&periodic_timer, SEND_INTERVAL);
     while(1){
